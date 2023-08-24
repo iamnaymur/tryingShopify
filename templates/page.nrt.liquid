@@ -1,0 +1,79 @@
+{% comment %}
+<div class="custom-cl">
+{% assign number1 = 10 %}
+{% assign number2 = 5 %}
+<p>Subscription is {{ number1 | minus: number2 }}</p>
+</div>
+{% endcomment %}
+
+{% comment %}
+logical operators fundamentals for shopify
+
+|| = or
+&& = and
+
+if = if
+else if = elsif
+else = else
+endif
+{% endcomment %}
+
+{% comment %}
+<div class="custom-cl">
+{% assign result = 100 %}
+{% if result > 100 %}
+<p>Your marks must be between 0 to 100.</p>
+{% elsif result >= 80 and result <= 100 %}
+<p>Your have got A+.</p>
+{% elsif result >= 70 and result < 80 %}
+<p>Your have got A.</p>
+{% elsif result >= 60 and result < 70 %}
+<p>Your have got A-.</p>
+{% elsif result >= 50 and result < 60 %}
+<p>Your have got B.</p>
+{% else %}
+<p>jaiya porte bosho.</p>
+{% endif %}
+</div>
+{% endcomment %}
+
+{% comment %}
+{% assign color = "red" %}
+{% if color == "green" %}
+<p>The name of the color is {{ color }}</p>
+{% else %}
+<p>The color name is {{ color }}</p>
+{% endif %}
+{% endcomment %}
+
+{% comment %}
+{% endcomment %}
+
+
+<div class="custom-cl">
+{% assign color = "blue" %}
+{% case color %}
+{% when "green" %}
+The color is {{ color }}
+{% when "blue" %}
+The color is {{ color }}
+{% else %}
+None of the above color is right.
+{% endcase %}
+</div>
+
+<!-- <div class="custom-cl">
+  {% for i in (1..5) %}
+    {{ "I love my mother" | downcase }}
+  {% endfor %}
+</div> -->
+
+<style>
+    .custom-cl {
+      display: flex;
+      width: 100vw;
+      height: 50vh;
+      justify-content: center;
+      align-items: center;
+  }
+</style>
