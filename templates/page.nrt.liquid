@@ -16,9 +16,7 @@ if = if
 else if = elsif
 else = else
 endif
-{% endcomment %}
-
-{% comment %}
+{% endcomment %}{% comment %}
 <div class="custom-cl">
 {% assign result = 100 %}
 {% if result > 100 %}
@@ -35,45 +33,96 @@ endif
 <p>jaiya porte bosho.</p>
 {% endif %}
 </div>
-{% endcomment %}
-
-{% comment %}
+{% endcomment %}{% comment %}
 {% assign color = "red" %}
 {% if color == "green" %}
 <p>The name of the color is {{ color }}</p>
 {% else %}
 <p>The color name is {{ color }}</p>
 {% endif %}
-{% endcomment %}
-
-{% comment %}
-{% endcomment %}
-
-
-<div class="custom-cl">
-{% assign color = "blue" %}
-{% case color %}
-{% when "green" %}
-The color is {{ color }}
-{% when "blue" %}
-The color is {{ color }}
-{% else %}
-None of the above color is right.
-{% endcase %}
+{% endcomment %}{% comment %}
+{% endcomment %}<div>
+  {% assign color = 'blue' %}
+    {% case color %}
+    {% when 'green' %}
+    The color is
+    {{ color }}
+    {% when 'blue' %}
+    The color is
+    {{ color }}
+  {% else %}
+    None of the above color is right.
+  {% endcase %}
 </div>
 
-<!-- <div class="custom-cl">
-  {% for i in (1..5) %}
-    {{ "I love my mother" | downcase }}
+{% comment %} <div class="custom-cl">
+{% for i in (1..5) %}
+{{ "I love my mother" | downcase }}
+{% endfor %}
+</div> {% endcomment %}<div class="myVariable">
+  {% assign myVar = 'This is my variable' | upcase %}
+  {{ myVar }}
+
+  <br>
+  {% comment %} {% assign num1 = 10 %}
+  {% assign num2 = 20 %}
+  {% assign num3 = 40 %}
+
+  Addition {{ num1 | plus: num2 }}
+  <br>
+  Substraction {{ num1 | minus: num2 }}
+  <br>
+  Multiply {{ num1 | times: num2 }}
+  <br>
+  Divided {{ num1 | divided_by: num2 }} {% endcomment %}</div>
+
+{% assign color = "red" %}
+{% case color %}
+  {% when "red" %}
+  Color is {{ color }}
+  {% when "blue" %}
+  Color is {{ color }}
+{% else %}
+  No color matches.
+{% endcase %}
+<br>{% comment %} {% if num1 > num2 and num1 > num3 %}
+  Number 1 is the greather.
+  {% endif %} {% endcomment %}{% comment %}
+  <style>
+  .custom-cl {
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  }
+  </style>
+  {% endcomment %}{% comment %}
+
+  //! loops again {% endcomment %}<div class="newLoop"> {% for i in (1..10) %}
+    {% if forloop.first %}
+      the first index of this loop. <br>
+    {% elsif forloop.last %}
+      The last index of this loop. <br>
+    {% else %}
+      The index is {{ i }} <br>
+    {% endif %}
+
   {% endfor %}
-</div> -->
+</div>
+
+<div style="text-align: center; font-size: 24px;">
+  {{ page.title }}
+</div>
 
 <style>
-    .custom-cl {
-      display: flex;
-      width: 100vw;
-      height: 50vh;
-      justify-content: center;
-      align-items: center;
+  .newLoop {
+    color: red;
+    font-weight: 700;
+    text-align: center;
+  }
+  .myVariable {
+    font-size: 20px;
+    font-weight: bold;
   }
 </style>
